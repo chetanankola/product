@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="zV1-7H-ozc">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--ProductListVC-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController title="ProductListVC" id="BYZ-38-t0r" customClass="ProductListVC" customModule="Shopping_Product" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="DTc-bN-H8Z">
+                                <rect key="frame" x="0.0" y="64" width="600" height="536"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="oBj-pw-Rr1">
+                                    <size key="itemSize" width="50" height="50"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells/>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="che-jb-Pw5"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="eMe-Bv-dMP"/>
+                                </connections>
+                            </collectionView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="DTc-bN-H8Z" secondAttribute="trailing" constant="-20" id="2iv-CS-f7C"/>
+                            <constraint firstItem="DTc-bN-H8Z" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="GV7-54-ZzQ"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="DTc-bN-H8Z" secondAttribute="bottom" id="ZVh-sV-ebu"/>
+                            <constraint firstItem="DTc-bN-H8Z" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="afa-0r-XSY"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="FFb-qc-Fg0"/>
+                    <connections>
+                        <outlet property="ProductCV" destination="DTc-bN-H8Z" id="u94-ou-Sqj"/>
+                        <segue destination="T1O-SX-0Pa" kind="show" identifier="ProductDetailSegue" id="5W2-Hu-1Ic"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="688" y="454"/>
+        </scene>
+        <!--Storyboard Reference-->
+        <scene sceneID="0mQ-gr-M8o">
+            <objects>
+                <viewControllerPlaceholder id="T1O-SX-0Pa" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="aw3-PE-idT" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1333.5" y="425"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="ynH-QK-VDl">
+            <objects>
+                <navigationController id="zV1-7H-ozc" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="QlE-0P-She">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="Dl3-rl-AY7"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="a5n-d5-q44" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-241" y="454"/>
+        </scene>
+    </scenes>
+</document>
