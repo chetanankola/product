@@ -12,9 +12,9 @@ import Signals
 class ProductListVC: UIViewController {
 
     @IBOutlet weak var ProductCV: UICollectionView!
-    private let spacing:CGFloat = 3.0
+    private let spacing:CGFloat = 10.0
     private let numberOfItemsPerRow:CGFloat = 2.0
-    private let cellHeight:CGFloat = 200
+    private let cellHeight:CGFloat = 300
     
     
     
@@ -30,9 +30,19 @@ class ProductListVC: UIViewController {
         ProductCV.registerNib(UINib(nibName: "ProductCell", bundle: nil), forCellWithReuseIdentifier: "ProductCell")
     }
     func initListeners() {
-        ProductListStore.ProductListUpdated.listen(self, callback: { productList in
+        ProductListStore.ProductListUpdated.listen(self, callback: { (productList, newProducts) in
             
-            self.ProductCV.reloadData()
+//            dispatch_async(dispatch_get_main_queue()) {
+//                self.ProductCV.reloadData()
+//            }
+            self.ProductCV.performBatchUpdates({
+                var offset = productList.count - newProducts.count
+                for _ in newProducts {
+                    let indexPath = NSIndexPath(forItem: offset, inSection: 0)
+                    self.ProductCV.insertItemsAtIndexPaths([indexPath])
+                    offset = offset + 1
+                }
+            }, completion: nil)
         })
     }
 
@@ -70,7 +80,7 @@ extension ProductListVC : UICollectionViewDelegateFlowLayout {
                         layout collectionViewLayout: UICollectionViewLayout,
                                insetForSectionAtIndex section: Int) -> UIEdgeInsets {
         //no section inset since there is only one section
-        let sectionInsets = UIEdgeInsets(top: -40, left: spacing, bottom: spacing, right: spacing)
+        let sectionInsets = UIEdgeInsets(top: 65+spacing, left: spacing, bottom: spacing, right: spacing)
         return sectionInsets
     }
     
@@ -82,12 +92,37 @@ extension ProductListVC : UICollectionViewDelegateFlowLayout {
         return spacing
     }
 }
+
+
+extension ProductListVC: UIScrollViewDelegate {
+    func scrollViewDidScroll(scrollView: UIScrollView) {
+        let frameHeight  = scrollView.frame.size.height
+        let yOffset = scrollView.contentOffset.y
+        
+        //frameheight + YOffset = scrollerheight
+        
+        let contentHeight = scrollView.contentSize.height
+        
+        
+        //prolly better as yoff > content - frame
+        let earlyOffset = CGFloat(0.0)
+        let theYoffset = yOffset + earlyOffset
+        
+        let availScrollableHeight = max(contentHeight,frameHeight) - frameHeight
+        if (theYoffset == availScrollableHeight) {
+            ProductListStore.getNextPage()
+        }
+        
+        print("yoffset \(theYoffset) availHeight \(availScrollableHeight)")
+
+    }
+}
 extension ProductListVC: UICollectionViewDelegate {
     //All about collection view
     
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         
-        print(ProductListStore.getProductList().count)
+        //print(ProductListStore.getProductList().count)
         return ProductListStore.getProductList().count
     }
     

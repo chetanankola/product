@@ -25,7 +25,7 @@ class ProductListStore {
     }
     
     //Signals
-    static let ProductListUpdated = Signal<[Product]>()
+    static let ProductListUpdated = Signal<(productList:[Product], diffProductList:[Product])>()
     
     
     static func initStore() {
@@ -33,14 +33,20 @@ class ProductListStore {
     }
     
     static func getNextPage() {
+        print("Fetch dat for page:\(pageNum)")
         ProductApi.sharedInstance.getProductList(pageNum) { (jsonData, success, errorMessage) in
             dispatch_async(dispatch_get_main_queue(), { () -> Void in
                 if (success) {
                     let data = jsonData!
-                    print("got data")
+                    print("Success! Fetched page:\(pageNum)")
                     
                     if let items = data["products"].array {
-                        for item in items { ProductList.append(Product(jsonData: item)) }
+                        var diffArray = [Product]()
+                        for item in items {
+                            let productItem = Product(jsonData: item)
+                            ProductList.append(productItem)
+                            diffArray.append(productItem)
+                        }
                         
                         pageNum = data["pageNumber"].intValue
                         totalProducts = data["totalProducts"].intValue
@@ -49,7 +55,7 @@ class ProductListStore {
                         
                         //let all listeners know about new products
                         //better to fire here than on didSet
-                        ProductListUpdated.fire(ProductList)
+                        ProductListUpdated.fire((productList:ProductList, diffProductList:diffArray))
                     } else {
                         //better handling?
                         print(data["error"]["message"])

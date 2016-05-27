@@ -19,6 +19,7 @@ class Product {
     var productImage: String?
     var price:String?
     var longDescription: String?
+    var shortDescription: String?
     var reviewRating: Double?
     var inStock: Bool?
     
@@ -30,6 +31,7 @@ class Product {
         self.productImage       = jsonData["productImage"].stringValue
         self.price              = jsonData["price"].stringValue
         self.longDescription    = jsonData["longDescription"].stringValue
+        self.shortDescription    = jsonData["shortDescription"].stringValue
         self.reviewRating       = jsonData["reviewRating"].doubleValue
         self.inStock            = jsonData["inStock"].boolValue
     
