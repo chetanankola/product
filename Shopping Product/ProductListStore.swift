@@ -11,8 +11,10 @@ import Signals
 
 class ProductListStore {
     
+    
     private static var totalProducts: Int = 0
     private static var pageNum: Int = AppConstants.INITIAL_PAGE_NUMBER
+    private static var currentPageBeingFetched: Int = -1
     private static var ProductList: [Product] = [] {
         didSet {
             //may be or may not a good idea to fire here
@@ -33,12 +35,23 @@ class ProductListStore {
     }
     
     static func getNextPage() {
-        print("Fetch dat for page:\(pageNum)")
+        
+        
+        
+        if (currentPageBeingFetched == pageNum) {
+//            print("return! same page being fetched \(currentPageBeingFetched)")
+            return
+        }
+        currentPageBeingFetched = pageNum
+        print("Fetching data for page:\(pageNum)")
         ProductApi.sharedInstance.getProductList(pageNum) { (jsonData, success, errorMessage) in
+            
+            
+            //do not append same pagenum data into prod
             dispatch_async(dispatch_get_main_queue(), { () -> Void in
                 if (success) {
                     let data = jsonData!
-                    print("Success! Fetched page:\(pageNum)")
+//                    print("Success! Fetched page:\(pageNum)")
                     
                     if let items = data["products"].array {
                         var diffArray = [Product]()
@@ -47,7 +60,7 @@ class ProductListStore {
                             ProductList.append(productItem)
                             diffArray.append(productItem)
                         }
-                        
+                        print("total items: \(ProductList.count)")
                         pageNum = data["pageNumber"].intValue
                         totalProducts = data["totalProducts"].intValue
                         

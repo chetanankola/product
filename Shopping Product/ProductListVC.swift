@@ -17,6 +17,7 @@ class ProductListVC: UIViewController {
     private let cellHeight:CGFloat = 300
     
     
+    var debounceTimer: NSTimer?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -104,18 +105,33 @@ extension ProductListVC: UIScrollViewDelegate {
         let contentHeight = scrollView.contentSize.height
         
         
-        //prolly better as yoff > content - frame
-        let earlyOffset = CGFloat(0.0)
-        let theYoffset = yOffset + earlyOffset
         
+        let earlyOffset = frameHeight//allows early request before the we reach end of page..
+        let theYoffset = yOffset + earlyOffset
         let availScrollableHeight = max(contentHeight,frameHeight) - frameHeight
-        if (theYoffset == availScrollableHeight) {
+        
+        
+        if (theYoffset > availScrollableHeight) {
+            
+            
+//            if debounceTimer != nil {
+//                debounceTimer?.invalidate()
+//            }
+//            debounceTimer = NSTimer.scheduledTimerWithTimeInterval(0.01, target: self, selector: #selector(ProductListVC.debounceGetNextPage(_:)), userInfo: nil, repeats: false)
+            
+            
+//            print("trying to fetch next page")
             ProductListStore.getNextPage()
         }
         
-        print("yoffset \(theYoffset) availHeight \(availScrollableHeight)")
+//        print("yoffset \(theYoffset) availHeight \(availScrollableHeight)")
 
     }
+//    func debounceGetNextPage(timer: NSTimer) {
+//        print("trying to fetch next page")
+//        ProductListStore.getNextPage()
+//    }
+    
 }
 extension ProductListVC: UICollectionViewDelegate {
     //All about collection view
