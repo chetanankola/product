@@ -11,10 +11,11 @@ import Signals
 
 class ProductListVC: UIViewController {
 
+    @IBOutlet weak var loadingIndicator: UIActivityIndicatorView!
     @IBOutlet weak var ProductCV: UICollectionView!
-    private let spacing:CGFloat = 10.0
+    private let spacing:CGFloat = 5.0
     private let numberOfItemsPerRow:CGFloat = 2.0
-    private let cellHeight:CGFloat = 300
+    private let cellHeight:CGFloat = 200
     
     
     var debounceTimer: NSTimer?
@@ -36,6 +37,7 @@ class ProductListVC: UIViewController {
 //            dispatch_async(dispatch_get_main_queue()) {
 //                self.ProductCV.reloadData()
 //            }
+            self.loadingIndicator.stopAnimating()
             self.ProductCV.performBatchUpdates({
                 var offset = productList.count - newProducts.count
                 for _ in newProducts {
@@ -81,7 +83,7 @@ extension ProductListVC : UICollectionViewDelegateFlowLayout {
                         layout collectionViewLayout: UICollectionViewLayout,
                                insetForSectionAtIndex section: Int) -> UIEdgeInsets {
         //no section inset since there is only one section
-        let sectionInsets = UIEdgeInsets(top: 65+spacing, left: spacing, bottom: spacing, right: spacing)
+        let sectionInsets = UIEdgeInsets(top: 65+spacing, left: spacing, bottom: spacing+50, right: spacing)
         return sectionInsets
     }
     
@@ -118,11 +120,12 @@ extension ProductListVC: UIScrollViewDelegate {
 //                debounceTimer?.invalidate()
 //            }
 //            debounceTimer = NSTimer.scheduledTimerWithTimeInterval(0.01, target: self, selector: #selector(ProductListVC.debounceGetNextPage(_:)), userInfo: nil, repeats: false)
-            
-            
 //            print("trying to fetch next page")
+            
             ProductListStore.getNextPage()
+            self.loadingIndicator.startAnimating()
         }
+
         
 //        print("yoffset \(theYoffset) availHeight \(availScrollableHeight)")
 
@@ -145,7 +148,6 @@ extension ProductListVC: UICollectionViewDelegate {
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> ProductCell {
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier("ProductCell", forIndexPath: indexPath) as! ProductCell
         cell.product = ProductListStore.getProductList()[indexPath.row]
-        //cell.delegate = self
         return cell
     }
     

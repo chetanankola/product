@@ -17,22 +17,17 @@
                         <rect key="frame" x="0.0" y="0.0" width="359" height="302"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="cqK-QW-4C8">
-                                <rect key="frame" x="0.0" y="0.0" width="359" height="200"/>
+                                <rect key="frame" x="0.0" y="0.0" width="359" height="160"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="200" id="Lrv-pu-XDy"/>
-                                    <constraint firstAttribute="height" constant="300" id="OyI-uk-qWI"/>
+                                    <constraint firstAttribute="height" constant="160" id="Lrv-pu-XDy"/>
                                 </constraints>
-                                <variation key="default">
-                                    <mask key="constraints">
-                                        <exclude reference="OyI-uk-qWI"/>
-                                    </mask>
-                                </variation>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="as1-0q-9Kh" userLabel="ProductTitle">
-                                <rect key="frame" x="8" y="200" width="343" height="40"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="as1-0q-9Kh" userLabel="ProductTitle">
+                                <rect key="frame" x="8" y="160" width="343" height="35"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="TZU-vl-zeQ"/>
-                                    <constraint firstAttribute="height" constant="40" id="oDs-x1-CP7"/>
+                                    <constraint firstAttribute="height" constant="35" id="oDs-x1-CP7"/>
                                     <constraint firstAttribute="width" constant="356" id="wrb-Q3-acq"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
@@ -48,23 +43,13 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="bottom" secondItem="cqK-QW-4C8" secondAttribute="bottom" id="42x-Y4-o5i"/>
                             <constraint firstItem="as1-0q-9Kh" firstAttribute="top" secondItem="cqK-QW-4C8" secondAttribute="bottom" id="DZG-nQ-Kcl"/>
-                            <constraint firstItem="as1-0q-9Kh" firstAttribute="centerY" secondItem="tcw-7W-vS7" secondAttribute="centerY" id="LKk-Bc-Oa0"/>
                             <constraint firstItem="cqK-QW-4C8" firstAttribute="leading" secondItem="tcw-7W-vS7" secondAttribute="leading" id="TBo-7D-z8k"/>
-                            <constraint firstItem="as1-0q-9Kh" firstAttribute="centerX" secondItem="tcw-7W-vS7" secondAttribute="centerX" id="eS2-EM-JwA"/>
                             <constraint firstItem="cqK-QW-4C8" firstAttribute="top" secondItem="tcw-7W-vS7" secondAttribute="top" id="gVE-qq-5G1"/>
                             <constraint firstAttribute="trailing" secondItem="cqK-QW-4C8" secondAttribute="trailing" id="iuE-d2-wFB"/>
                             <constraint firstAttribute="trailing" secondItem="as1-0q-9Kh" secondAttribute="trailing" constant="8" id="o5M-0w-Ipy"/>
                             <constraint firstItem="as1-0q-9Kh" firstAttribute="leading" secondItem="tcw-7W-vS7" secondAttribute="leading" constant="8" id="wSl-0e-uu2"/>
                         </constraints>
-                        <variation key="default">
-                            <mask key="constraints">
-                                <exclude reference="42x-Y4-o5i"/>
-                                <exclude reference="LKk-Bc-Oa0"/>
-                                <exclude reference="eS2-EM-JwA"/>
-                            </mask>
-                        </variation>
                     </view>
                 </subviews>
                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
