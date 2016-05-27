@@ -49,9 +49,18 @@ class ProductListVC: UIViewController {
         })
     }
 
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         
+    }
+    
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
+        if (segue.identifier == "ProductDetailSegue") {
+            let svc = segue.destinationViewController as! ProductDetailVC
+            svc.product = sender as! Product
+        }
     }
 }
 
@@ -74,8 +83,8 @@ extension ProductListVC : UICollectionViewDelegateFlowLayout {
         let row = indexPath.row
         
         
-        let activity = ProductListStore.getProductList()[row]
-//        self.performSegueWithIdentifier("segueDetails", sender: activity)
+        let product = ProductListStore.getProductList()[row]
+        self.performSegueWithIdentifier("ProductDetailSegue", sender: product)
     }
     
     //whole section edge space

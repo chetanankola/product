@@ -24,6 +24,7 @@
 		C532F6461CF6CAFA006BD6D5 /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = C532F6451CF6CAFA006BD6D5 /* Product.swift */; };
 		C532F64A1CF6EA03006BD6D5 /* ProductCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C532F6481CF6EA03006BD6D5 /* ProductCell.swift */; };
 		C532F64B1CF6EA03006BD6D5 /* ProductCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C532F6491CF6EA03006BD6D5 /* ProductCell.xib */; };
+		C552BF501CF84C230000D89B /* ProductDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C552BF4F1CF84C230000D89B /* ProductDetailVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -72,6 +73,7 @@
 		C532F6451CF6CAFA006BD6D5 /* Product.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
 		C532F6481CF6EA03006BD6D5 /* ProductCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductCell.swift; sourceTree = "<group>"; };
 		C532F6491CF6EA03006BD6D5 /* ProductCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProductCell.xib; sourceTree = "<group>"; };
+		C552BF4F1CF84C230000D89B /* ProductDetailVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductDetailVC.swift; sourceTree = "<group>"; };
 		E07F9986F075FA0E8DF31F1A /* Pods-Shopping ProductTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Shopping ProductTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Shopping ProductTests/Pods-Shopping ProductTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -230,6 +232,7 @@
 			isa = PBXGroup;
 			children = (
 				C532F60D1CF6B29F006BD6D5 /* ProductListVC.swift */,
+				C552BF4F1CF84C230000D89B /* ProductDetailVC.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -514,6 +517,7 @@
 				C532F60C1CF6B29F006BD6D5 /* AppDelegate.swift in Sources */,
 				C532F6431CF6CAB7006BD6D5 /* ProductListStore.swift in Sources */,
 				C532F6401CF6C2B2006BD6D5 /* Constants.swift in Sources */,
+				C552BF501CF84C230000D89B /* ProductDetailVC.swift in Sources */,
 				C532F64A1CF6EA03006BD6D5 /* ProductCell.swift in Sources */,
 				C532F6461CF6CAFA006BD6D5 /* Product.swift in Sources */,
 			);
