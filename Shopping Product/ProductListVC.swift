@@ -59,7 +59,7 @@ class ProductListVC: UIViewController {
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
         if (segue.identifier == "ProductDetailSegue") {
             let svc = segue.destinationViewController as! ProductDetailVC
-            svc.product = sender as! Product
+            svc.product = sender as? Product
         }
     }
 }

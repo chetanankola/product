@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--ProductDetailVC-->
@@ -16,8 +17,33 @@
                     <view key="view" contentMode="scaleToFill" id="L4Q-vr-urB">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="ubi-d2-OXp" userLabel="ProductDetailCV">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="l9y-4b-Hc0">
+                                    <size key="itemSize" width="50" height="50"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells/>
+                                <connections>
+                                    <outlet property="dataSource" destination="nKR-69-h5C" id="bmb-Sn-xN5"/>
+                                    <outlet property="delegate" destination="nKR-69-h5C" id="8ZY-dX-Uy2"/>
+                                </connections>
+                            </collectionView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="ubi-d2-OXp" firstAttribute="leading" secondItem="L4Q-vr-urB" secondAttribute="leadingMargin" constant="-20" id="BHs-aW-5sz"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="ubi-d2-OXp" secondAttribute="trailing" constant="-20" id="cJY-Lx-Rkr"/>
+                            <constraint firstItem="ONQ-iQ-Dxx" firstAttribute="top" secondItem="ubi-d2-OXp" secondAttribute="bottom" id="dGq-R9-c5G"/>
+                            <constraint firstItem="ubi-d2-OXp" firstAttribute="top" secondItem="L4Q-vr-urB" secondAttribute="topMargin" id="sxU-T4-cmZ"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="ProductDetailCV" destination="ubi-d2-OXp" id="8iI-QJ-jQE"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GHO-GM-vEJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

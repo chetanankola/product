@@ -25,6 +25,8 @@
 		C532F64A1CF6EA03006BD6D5 /* ProductCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C532F6481CF6EA03006BD6D5 /* ProductCell.swift */; };
 		C532F64B1CF6EA03006BD6D5 /* ProductCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C532F6491CF6EA03006BD6D5 /* ProductCell.xib */; };
 		C552BF501CF84C230000D89B /* ProductDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C552BF4F1CF84C230000D89B /* ProductDetailVC.swift */; };
+		C552BF531CF8F68F0000D89B /* ProductDetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C552BF511CF8F68F0000D89B /* ProductDetailCell.swift */; };
+		C552BF541CF8F68F0000D89B /* ProductDetailCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C552BF521CF8F68F0000D89B /* ProductDetailCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -74,6 +76,8 @@
 		C532F6481CF6EA03006BD6D5 /* ProductCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductCell.swift; sourceTree = "<group>"; };
 		C532F6491CF6EA03006BD6D5 /* ProductCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProductCell.xib; sourceTree = "<group>"; };
 		C552BF4F1CF84C230000D89B /* ProductDetailVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductDetailVC.swift; sourceTree = "<group>"; };
+		C552BF511CF8F68F0000D89B /* ProductDetailCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductDetailCell.swift; sourceTree = "<group>"; };
+		C552BF521CF8F68F0000D89B /* ProductDetailCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProductDetailCell.xib; sourceTree = "<group>"; };
 		E07F9986F075FA0E8DF31F1A /* Pods-Shopping ProductTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Shopping ProductTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Shopping ProductTests/Pods-Shopping ProductTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -224,6 +228,8 @@
 			children = (
 				C532F6481CF6EA03006BD6D5 /* ProductCell.swift */,
 				C532F6491CF6EA03006BD6D5 /* ProductCell.xib */,
+				C552BF511CF8F68F0000D89B /* ProductDetailCell.swift */,
+				C552BF521CF8F68F0000D89B /* ProductDetailCell.xib */,
 			);
 			name = Cells;
 			sourceTree = "<group>";
@@ -362,6 +368,7 @@
 			files = (
 				C532F6161CF6B29F006BD6D5 /* LaunchScreen.storyboard in Resources */,
 				C532F6131CF6B29F006BD6D5 /* Assets.xcassets in Resources */,
+				C552BF541CF8F68F0000D89B /* ProductDetailCell.xib in Resources */,
 				C532F64B1CF6EA03006BD6D5 /* ProductCell.xib in Resources */,
 				C532F6111CF6B29F006BD6D5 /* Main.storyboard in Resources */,
 				C532F63A1CF6B406006BD6D5 /* ProductDetail.storyboard in Resources */,
@@ -519,6 +526,7 @@
 				C532F6401CF6C2B2006BD6D5 /* Constants.swift in Sources */,
 				C552BF501CF84C230000D89B /* ProductDetailVC.swift in Sources */,
 				C532F64A1CF6EA03006BD6D5 /* ProductCell.swift in Sources */,
+				C552BF531CF8F68F0000D89B /* ProductDetailCell.swift in Sources */,
 				C532F6461CF6CAFA006BD6D5 /* Product.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

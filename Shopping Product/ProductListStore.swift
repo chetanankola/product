@@ -22,6 +22,10 @@ class ProductListStore {
     }
     
     
+    class func findProduct(product:Product) -> Int? {
+        return ProductList.indexOf({ $0 === product})
+    }
+    
     class func getProductList() -> [Product] {
         return ProductList
     }

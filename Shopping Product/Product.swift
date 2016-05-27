@@ -14,7 +14,7 @@ class Product {
     var productId:String!
     
     //optionals
-    var name:String?
+    var productName: String?
     var reviewCount: Int?
     var productImage: String?
     var price:String?
@@ -26,7 +26,7 @@ class Product {
     init (jsonData:JSON) {
         self.productId          = jsonData["productId"].stringValue
         //optionals
-        self.name               = jsonData["name"].stringValue
+        self.productName        = jsonData["productName"].stringValue
         self.reviewCount        = jsonData["reviewCount"].intValue
         self.productImage       = jsonData["productImage"].stringValue
         self.price              = jsonData["price"].stringValue
