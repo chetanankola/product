@@ -17,38 +17,52 @@
                         <rect key="frame" x="0.0" y="0.0" width="359" height="302"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="cqK-QW-4C8">
-                                <rect key="frame" x="0.0" y="0.0" width="359" height="160"/>
+                                <rect key="frame" x="0.0" y="0.0" width="359" height="140"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="160" id="Lrv-pu-XDy"/>
+                                    <constraint firstAttribute="height" constant="140" id="Lrv-pu-XDy"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="as1-0q-9Kh" userLabel="ProductTitle">
-                                <rect key="frame" x="8" y="160" width="343" height="35"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="40" id="TZU-vl-zeQ"/>
-                                    <constraint firstAttribute="height" constant="35" id="oDs-x1-CP7"/>
-                                    <constraint firstAttribute="width" constant="356" id="wrb-Q3-acq"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                                <variation key="default">
-                                    <mask key="constraints">
-                                        <exclude reference="TZU-vl-zeQ"/>
-                                        <exclude reference="wrb-Q3-acq"/>
-                                    </mask>
-                                </variation>
-                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="abI-lL-ITT">
+                                <rect key="frame" x="8" y="140" width="343" height="79"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9qJ-wK-60k" userLabel="ProductName">
+                                        <rect key="frame" x="0.0" y="0.0" width="343" height="44"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="44" id="scz-OG-y9R"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ShortDescription" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="as1-0q-9Kh" userLabel="Short Description">
+                                        <rect key="frame" x="0.0" y="44" width="343" height="35"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="TZU-vl-zeQ"/>
+                                            <constraint firstAttribute="height" constant="35" id="oDs-x1-CP7"/>
+                                            <constraint firstAttribute="width" constant="356" id="wrb-Q3-acq"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                        <variation key="default">
+                                            <mask key="constraints">
+                                                <exclude reference="TZU-vl-zeQ"/>
+                                                <exclude reference="wrb-Q3-acq"/>
+                                            </mask>
+                                        </variation>
+                                    </label>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="as1-0q-9Kh" firstAttribute="top" secondItem="cqK-QW-4C8" secondAttribute="bottom" id="DZG-nQ-Kcl"/>
+                            <constraint firstAttribute="trailing" secondItem="abI-lL-ITT" secondAttribute="trailing" constant="8" id="Kih-r3-F7U"/>
+                            <constraint firstItem="abI-lL-ITT" firstAttribute="leading" secondItem="tcw-7W-vS7" secondAttribute="leading" constant="8" id="NMb-10-gaZ"/>
                             <constraint firstItem="cqK-QW-4C8" firstAttribute="leading" secondItem="tcw-7W-vS7" secondAttribute="leading" id="TBo-7D-z8k"/>
+                            <constraint firstItem="abI-lL-ITT" firstAttribute="top" secondItem="cqK-QW-4C8" secondAttribute="bottom" id="eIK-A2-noT"/>
                             <constraint firstItem="cqK-QW-4C8" firstAttribute="top" secondItem="tcw-7W-vS7" secondAttribute="top" id="gVE-qq-5G1"/>
                             <constraint firstAttribute="trailing" secondItem="cqK-QW-4C8" secondAttribute="trailing" id="iuE-d2-wFB"/>
-                            <constraint firstAttribute="trailing" secondItem="as1-0q-9Kh" secondAttribute="trailing" constant="8" id="o5M-0w-Ipy"/>
-                            <constraint firstItem="as1-0q-9Kh" firstAttribute="leading" secondItem="tcw-7W-vS7" secondAttribute="leading" constant="8" id="wSl-0e-uu2"/>
                         </constraints>
                     </view>
                 </subviews>
@@ -64,7 +78,8 @@
             <connections>
                 <outlet property="CardView" destination="tcw-7W-vS7" id="gzd-FZ-Mcb"/>
                 <outlet property="ProductImage" destination="cqK-QW-4C8" id="pLI-py-cqI"/>
-                <outlet property="ProductTitle" destination="as1-0q-9Kh" id="ykd-PG-sP6"/>
+                <outlet property="ProductName" destination="9qJ-wK-60k" id="2MR-57-5gn"/>
+                <outlet property="ProductShortDescription" destination="as1-0q-9Kh" id="vNN-5l-fXL"/>
             </connections>
             <point key="canvasLocation" x="327.5" y="228"/>
         </collectionViewCell>

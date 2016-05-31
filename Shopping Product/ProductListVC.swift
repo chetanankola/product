@@ -9,13 +9,13 @@
 import UIKit
 import Signals
 
-class ProductListVC: UIViewController {
+class ProductListVC: UIViewController, UIViewControllerPreviewingDelegate {
 
     @IBOutlet weak var loadingIndicator: UIActivityIndicatorView!
     @IBOutlet weak var ProductCV: UICollectionView!
     private let spacing:CGFloat = 5.0
-    private let numberOfItemsPerRow:CGFloat = 2.0
-    private let cellHeight:CGFloat = 200
+    private var numberOfItemsPerRow:CGFloat = 2.0
+    private let cellHeight:CGFloat = 250
     
     
     var debounceTimer: NSTimer?
@@ -25,18 +25,67 @@ class ProductListVC: UIViewController {
         ProductListStore.initStore()
         initListeners()
         initView()
+        if( traitCollection.forceTouchCapability == .Available){
+            registerForPreviewingWithDelegate(self, sourceView: view)
+        }
+    }
+    
+    func updateItemsPerRow(width:CGFloat) {
+        if (width > AppConstants.IPHONE_6_WIDTH) {
+            numberOfItemsPerRow = 3
+        } else {
+            numberOfItemsPerRow = 2
+        }
+
+    }
+    
+    override func viewWillTransitionToSize(size: CGSize, withTransitionCoordinator coordinator: UIViewControllerTransitionCoordinator) {
+        print(size)
+        
+        
+        updateItemsPerRow(size.width)
+        
+        ProductCV.collectionViewLayout.invalidateLayout()
         
     }
     
+    
+    
+    func previewingContext(previewingContext: UIViewControllerPreviewing, commitViewController viewControllerToCommit: UIViewController) {
+        showViewController(viewControllerToCommit, sender: self)
+    }
+    func previewingContext(previewingContext: UIViewControllerPreviewing, viewControllerForLocation location: CGPoint) -> UIViewController? {
+        
+        print("PEEK POP:\(location)")
+        let indexPath = ProductCV?.indexPathForItemAtPoint(location)// else { return nil }
+        let cell = ProductCV?.cellForItemAtIndexPath(indexPath!)// else { return nil }
+    
+        
+        
+        let storyboard = UIStoryboard(name: "ProductDetail", bundle: nil)
+        let productDetailVC = storyboard.instantiateInitialViewController() as! ProductDetailVC
+        
+        
+        productDetailVC.product = ProductListStore.getProductList()[indexPath!.row]
+        
+        
+        let frameSpace = CGRectGetWidth(ProductCV.frame)
+        let height = CGRectGetHeight(ProductCV.frame)
+        productDetailVC.preferredContentSize = CGSize(width: frameSpace, height: height)
+        previewingContext.sourceRect = cell!.frame
+        
+        return productDetailVC
+
+    }
+    
     func initView() {
+        let screenSize: CGRect = UIScreen.mainScreen().bounds
+        let width = screenSize.width
+        updateItemsPerRow(width)
         ProductCV.registerNib(UINib(nibName: "ProductCell", bundle: nil), forCellWithReuseIdentifier: "ProductCell")
     }
     func initListeners() {
         ProductListStore.ProductListUpdated.listen(self, callback: { (productList, newProducts) in
-            
-//            dispatch_async(dispatch_get_main_queue()) {
-//                self.ProductCV.reloadData()
-//            }
             self.loadingIndicator.stopAnimating()
             self.ProductCV.performBatchUpdates({
                 var offset = productList.count - newProducts.count
@@ -81,8 +130,6 @@ extension ProductListVC : UICollectionViewDelegateFlowLayout {
     
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
         let row = indexPath.row
-        
-        
         let product = ProductListStore.getProductList()[row]
         self.performSegueWithIdentifier("ProductDetailSegue", sender: product)
     }

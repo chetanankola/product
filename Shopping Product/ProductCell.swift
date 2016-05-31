@@ -11,8 +11,9 @@ import UIKit
 
 class ProductCell: UICollectionViewCell {
 
+    @IBOutlet weak var ProductName: UILabel!
     @IBOutlet weak var CardView: UIView!
-    @IBOutlet weak var ProductTitle: UILabel!
+    @IBOutlet weak var ProductShortDescription: UILabel!
     @IBOutlet weak var ProductImage: UIImageView!
     var product:Product? {
         didSet {
@@ -32,7 +33,9 @@ class ProductCell: UICollectionViewCell {
         }
         
         
-        
+        if let productName = product?.productName {
+            ProductName.text = productName
+        }
 
         if let productShortTitle = product?.shortDescription {
             //---Short Description//
@@ -41,7 +44,7 @@ class ProductCell: UICollectionViewCell {
                 data:  str.dataUsingEncoding(NSUnicodeStringEncoding, allowLossyConversion: true)!,
                 options: [ NSDocumentTypeDocumentAttribute: NSHTMLTextDocumentType],
                 documentAttributes: nil)
-            ProductTitle.attributedText = attrStr
+            ProductShortDescription.attributedText = attrStr
         }
         
         

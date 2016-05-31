@@ -43,6 +43,11 @@ class ProductDetailVC: UIViewController {
             self.scrollToIndex(self.product!)
         }
     }
+//    override func viewDidAppear(animated: Bool) {
+//        dispatch_async(dispatch_get_main_queue()) {
+//            self.scrollToIndex(self.product!)
+//        }
+//    }
 
     
     func initView() {

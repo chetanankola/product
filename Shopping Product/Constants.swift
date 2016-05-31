@@ -17,4 +17,6 @@ struct AppConstants {
     static let PRODUCT_URL_PATH = "walmartproducts/" + API_KEY + "/"
     
     static let BLUR_PLACEHOLDER_IMAGE = UIImage(named: "blurImage")
+    static let IPHONE_6_WIDTH = CGFloat(375)
 }
+
