@@ -8,13 +8,13 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ProductCell" id="gTV-IL-0wX" customClass="ProductCell" customModule="Shopping_Product" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="359" height="302"/>
+            <rect key="frame" x="0.0" y="0.0" width="359" height="587"/>
             <autoresizingMask key="autoresizingMask"/>
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                <rect key="frame" x="0.0" y="0.0" width="359" height="302"/>
+                <rect key="frame" x="0.0" y="0.0" width="359" height="587"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tcw-7W-vS7" userLabel="CardView">
-                        <rect key="frame" x="0.0" y="0.0" width="359" height="302"/>
+                        <rect key="frame" x="0.0" y="0.0" width="359" height="587"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="cqK-QW-4C8">
                                 <rect key="frame" x="0.0" y="0.0" width="359" height="140"/>
@@ -24,41 +24,48 @@
                                 </constraints>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="abI-lL-ITT">
-                                <rect key="frame" x="8" y="140" width="343" height="61"/>
+                                <rect key="frame" x="8" y="140" width="343" height="39"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Name" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="1" translatesAutoresizingMaskIntoConstraints="NO" id="9qJ-wK-60k" userLabel="ProductName">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" misplaced="YES" text="Name" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="1" translatesAutoresizingMaskIntoConstraints="NO" id="9qJ-wK-60k" userLabel="ProductName">
                                         <rect key="frame" x="0.0" y="0.0" width="343" height="20"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="44" id="scz-OG-y9R"/>
-                                        </constraints>
                                         <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="14"/>
                                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
-                                        <variation key="default">
-                                            <mask key="constraints">
-                                                <exclude reference="scz-OG-y9R"/>
-                                            </mask>
-                                        </variation>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Price" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0zG-3c-jbH">
-                                        <rect key="frame" x="0.0" y="20" width="343" height="41"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="41" id="QGE-xH-8S3"/>
-                                        </constraints>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" misplaced="YES" text="Price" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="1" translatesAutoresizingMaskIntoConstraints="NO" id="0zG-3c-jbH">
+                                        <rect key="frame" x="0.0" y="20" width="343" height="20"/>
                                         <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="14"/>
                                         <color key="textColor" red="1" green="0.0097272684495107731" blue="0.010056403218984267" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="lessThanOrEqual" constant="100" id="urF-Ns-EkH"/>
+                                </constraints>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0j6-WY-ZMO" customClass="RatingStackView" customModule="Shopping_Product" customModuleProvider="target">
+                                <rect key="frame" x="8" y="187" width="100" height="33"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="33" id="Qo1-m5-eFj"/>
+                                    <constraint firstAttribute="height" constant="33" id="dIc-Vh-3Dq"/>
+                                    <constraint firstAttribute="width" constant="100" id="pTH-Bo-BHV"/>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="Qo1-m5-eFj"/>
+                                    </mask>
+                                </variation>
                             </stackView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="abI-lL-ITT" secondAttribute="trailing" constant="8" id="Kih-r3-F7U"/>
+                            <constraint firstItem="0j6-WY-ZMO" firstAttribute="top" secondItem="abI-lL-ITT" secondAttribute="bottom" constant="5" id="KqF-Ex-UEU"/>
                             <constraint firstItem="abI-lL-ITT" firstAttribute="leading" secondItem="tcw-7W-vS7" secondAttribute="leading" constant="8" id="NMb-10-gaZ"/>
                             <constraint firstItem="cqK-QW-4C8" firstAttribute="leading" secondItem="tcw-7W-vS7" secondAttribute="leading" id="TBo-7D-z8k"/>
                             <constraint firstItem="abI-lL-ITT" firstAttribute="top" secondItem="cqK-QW-4C8" secondAttribute="bottom" id="eIK-A2-noT"/>
                             <constraint firstItem="cqK-QW-4C8" firstAttribute="top" secondItem="tcw-7W-vS7" secondAttribute="top" id="gVE-qq-5G1"/>
+                            <constraint firstItem="0j6-WY-ZMO" firstAttribute="leading" secondItem="tcw-7W-vS7" secondAttribute="leading" constant="8" id="gaq-8x-tfn"/>
                             <constraint firstAttribute="trailing" secondItem="cqK-QW-4C8" secondAttribute="trailing" id="iuE-d2-wFB"/>
                         </constraints>
                     </view>
@@ -71,14 +78,15 @@
                 <constraint firstItem="tcw-7W-vS7" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="b6c-m0-5Sa"/>
                 <constraint firstAttribute="trailing" secondItem="tcw-7W-vS7" secondAttribute="trailing" id="rfD-XK-71c"/>
             </constraints>
-            <size key="customSize" width="359" height="302"/>
+            <size key="customSize" width="359" height="587"/>
             <connections>
                 <outlet property="CardView" destination="tcw-7W-vS7" id="gzd-FZ-Mcb"/>
                 <outlet property="Price" destination="0zG-3c-jbH" id="h4P-Aj-sto"/>
                 <outlet property="ProductImage" destination="cqK-QW-4C8" id="pLI-py-cqI"/>
                 <outlet property="ProductName" destination="9qJ-wK-60k" id="2MR-57-5gn"/>
+                <outlet property="RatingView" destination="0j6-WY-ZMO" id="DLb-X6-2Kq"/>
             </connections>
-            <point key="canvasLocation" x="327.5" y="228"/>
+            <point key="canvasLocation" x="327.5" y="370.5"/>
         </collectionViewCell>
     </objects>
 </document>

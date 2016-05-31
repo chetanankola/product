@@ -18,5 +18,9 @@ struct AppConstants {
     
     static let BLUR_PLACEHOLDER_IMAGE = UIImage(named: "blurImage")
     static let IPHONE_6_WIDTH = CGFloat(375)
+    
+    
+    static let MAXSTAR_RATING = 5
+    static let HALF_STAR_THRESHOLD = 0.3
 }
 

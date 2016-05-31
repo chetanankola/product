@@ -5,6 +5,7 @@ target 'Shopping Product' do
 	pod 'SwiftyJSON'
 	pod 'Signals'
     pod 'KFSwiftImageLoader'
+    pod 'FontAwesome.swift'
 end
 
 target 'Shopping ProductTests' do

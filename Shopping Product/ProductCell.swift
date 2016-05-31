@@ -11,6 +11,8 @@ import UIKit
 
 class ProductCell: UICollectionViewCell {
 
+    
+    @IBOutlet weak var RatingView: RatingStackView!
     @IBOutlet weak var Price: UILabel!
     @IBOutlet weak var ProductName: UILabel!
     @IBOutlet weak var CardView: UIView!
@@ -34,6 +36,10 @@ class ProductCell: UICollectionViewCell {
             ProductImage.loadImageFromURLString(productImage, placeholderImage: AppConstants.BLUR_PLACEHOLDER_IMAGE, completion: nil)
             
             
+        }
+        
+        if let reviewRating = product?.reviewRating {
+            RatingView.rating = reviewRating
         }
         
         
