@@ -23,34 +23,31 @@
                                     <constraint firstAttribute="height" constant="140" id="Lrv-pu-XDy"/>
                                 </constraints>
                             </imageView>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="abI-lL-ITT">
-                                <rect key="frame" x="8" y="140" width="343" height="79"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="abI-lL-ITT">
+                                <rect key="frame" x="8" y="140" width="343" height="61"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9qJ-wK-60k" userLabel="ProductName">
-                                        <rect key="frame" x="0.0" y="0.0" width="343" height="44"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Name" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="1" translatesAutoresizingMaskIntoConstraints="NO" id="9qJ-wK-60k" userLabel="ProductName">
+                                        <rect key="frame" x="0.0" y="0.0" width="343" height="20"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="44" id="scz-OG-y9R"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ShortDescription" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="as1-0q-9Kh" userLabel="Short Description">
-                                        <rect key="frame" x="0.0" y="44" width="343" height="35"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="40" id="TZU-vl-zeQ"/>
-                                            <constraint firstAttribute="height" constant="35" id="oDs-x1-CP7"/>
-                                            <constraint firstAttribute="width" constant="356" id="wrb-Q3-acq"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="14"/>
+                                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                         <variation key="default">
                                             <mask key="constraints">
-                                                <exclude reference="TZU-vl-zeQ"/>
-                                                <exclude reference="wrb-Q3-acq"/>
+                                                <exclude reference="scz-OG-y9R"/>
                                             </mask>
                                         </variation>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Price" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0zG-3c-jbH">
+                                        <rect key="frame" x="0.0" y="20" width="343" height="41"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="41" id="QGE-xH-8S3"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="14"/>
+                                        <color key="textColor" red="1" green="0.0097272684495107731" blue="0.010056403218984267" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
                             </stackView>
@@ -77,9 +74,9 @@
             <size key="customSize" width="359" height="302"/>
             <connections>
                 <outlet property="CardView" destination="tcw-7W-vS7" id="gzd-FZ-Mcb"/>
+                <outlet property="Price" destination="0zG-3c-jbH" id="h4P-Aj-sto"/>
                 <outlet property="ProductImage" destination="cqK-QW-4C8" id="pLI-py-cqI"/>
                 <outlet property="ProductName" destination="9qJ-wK-60k" id="2MR-57-5gn"/>
-                <outlet property="ProductShortDescription" destination="as1-0q-9Kh" id="vNN-5l-fXL"/>
             </connections>
             <point key="canvasLocation" x="327.5" y="228"/>
         </collectionViewCell>
