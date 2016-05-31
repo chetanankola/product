@@ -58,8 +58,8 @@
                                     <constraint firstAttribute="width" constant="200" id="Wca-Bu-Hfd"/>
                                     <constraint firstAttribute="height" constant="33" id="ewr-kP-1fT"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="15"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="16"/>
+                                <color key="textColor" red="0.82634921754615376" green="0.1530083550063733" blue="0.13753427331061005" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="jSs-0y-Lmy" userLabel="DescriptionStack">
