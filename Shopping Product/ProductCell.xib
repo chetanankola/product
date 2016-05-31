@@ -43,8 +43,8 @@
                                     <constraint firstAttribute="height" relation="lessThanOrEqual" constant="100" id="urF-Ns-EkH"/>
                                 </constraints>
                             </stackView>
-                            <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0j6-WY-ZMO" customClass="RatingStackView" customModule="Shopping_Product" customModuleProvider="target">
-                                <rect key="frame" x="8" y="187" width="100" height="33"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0j6-WY-ZMO" customClass="RatingStackView" customModule="Shopping_Product" customModuleProvider="target">
+                                <rect key="frame" x="8" y="245" width="100" height="33"/>
                                 <constraints>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="33" id="Qo1-m5-eFj"/>
                                     <constraint firstAttribute="height" constant="33" id="dIc-Vh-3Dq"/>

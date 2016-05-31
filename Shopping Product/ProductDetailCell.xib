@@ -27,6 +27,40 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="UYM-BL-rfT"/>
                                 </constraints>
+                                <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="15"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="62E-I4-jra" userLabel="Rating" customClass="RatingStackView" customModule="Shopping_Product" customModuleProvider="target">
+                                <rect key="frame" x="10" y="320" width="100" height="38"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="38" id="IIU-GB-4NZ"/>
+                                    <constraint firstAttribute="width" constant="100" id="voA-8l-r7T"/>
+                                </constraints>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="jSs-0y-Lmy" userLabel="DescriptionStack">
+                                <rect key="frame" x="10" y="366" width="400" height="47"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" minimumScaleFactor="1" translatesAutoresizingMaskIntoConstraints="NO" id="tMg-eW-E7M" userLabel="Short Description">
+                                        <rect key="frame" x="0.0" y="0.0" width="400" height="22"/>
+                                        <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="16"/>
+                                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="8" baselineAdjustment="alignBaselines" minimumScaleFactor="1" translatesAutoresizingMaskIntoConstraints="NO" id="pBr-sv-xIF" userLabel="Long Description">
+                                        <rect key="frame" x="0.0" y="25" width="400" height="22"/>
+                                        <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="16"/>
+                                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Huk-g1-aYI" userLabel="Price">
+                                <rect key="frame" x="10" y="272" width="200" height="33"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="Wca-Bu-Hfd"/>
+                                    <constraint firstAttribute="height" constant="33" id="ewr-kP-1fT"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -36,11 +70,24 @@
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="y8H-JQ-Zng" secondAttribute="trailing" constant="10" id="2uq-pY-uVN"/>
                             <constraint firstItem="y8H-JQ-Zng" firstAttribute="leading" secondItem="mJY-q5-zPn" secondAttribute="leading" constant="10" id="A46-Bt-aPp"/>
+                            <constraint firstItem="62E-I4-jra" firstAttribute="top" secondItem="Huk-g1-aYI" secondAttribute="bottom" constant="15" id="AGM-tq-BYo"/>
+                            <constraint firstItem="62E-I4-jra" firstAttribute="leading" secondItem="mJY-q5-zPn" secondAttribute="leading" constant="10" id="Bt7-eX-zYi"/>
+                            <constraint firstItem="Huk-g1-aYI" firstAttribute="top" secondItem="y8H-JQ-Zng" secondAttribute="bottom" constant="8" id="ITe-CU-zum"/>
                             <constraint firstItem="Bga-3e-ZuP" firstAttribute="leading" secondItem="mJY-q5-zPn" secondAttribute="leading" id="LZo-c3-rUG"/>
+                            <constraint firstItem="jSs-0y-Lmy" firstAttribute="leading" secondItem="mJY-q5-zPn" secondAttribute="leading" constant="10" id="TXM-q2-zN6"/>
                             <constraint firstItem="Bga-3e-ZuP" firstAttribute="top" secondItem="mJY-q5-zPn" secondAttribute="top" id="W1W-Or-fFh"/>
                             <constraint firstItem="y8H-JQ-Zng" firstAttribute="top" secondItem="Bga-3e-ZuP" secondAttribute="bottom" id="ZnS-Cw-G6h"/>
+                            <constraint firstItem="jSs-0y-Lmy" firstAttribute="top" secondItem="62E-I4-jra" secondAttribute="bottom" constant="8" id="gGq-5A-nBJ"/>
+                            <constraint firstItem="62E-I4-jra" firstAttribute="top" secondItem="Bga-3e-ZuP" secondAttribute="bottom" constant="52" id="msh-dB-GvF"/>
                             <constraint firstAttribute="trailing" secondItem="Bga-3e-ZuP" secondAttribute="trailing" id="qIN-Qv-eLU"/>
+                            <constraint firstAttribute="trailing" secondItem="jSs-0y-Lmy" secondAttribute="trailing" constant="8" id="tgx-ce-ouE"/>
+                            <constraint firstItem="Huk-g1-aYI" firstAttribute="leading" secondItem="mJY-q5-zPn" secondAttribute="leading" constant="10" id="xO4-CS-bqY"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="msh-dB-GvF"/>
+                            </mask>
+                        </variation>
                     </view>
                 </subviews>
                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -53,8 +100,12 @@
             </constraints>
             <size key="customSize" width="418" height="424"/>
             <connections>
+                <outlet property="LongDescription" destination="pBr-sv-xIF" id="UCK-8u-AQz"/>
                 <outlet property="ProductImage" destination="Bga-3e-ZuP" id="bGh-jg-h24"/>
                 <outlet property="ProductName" destination="y8H-JQ-Zng" id="63w-hH-a5W"/>
+                <outlet property="ProductPrice" destination="Huk-g1-aYI" id="jhv-ck-YDt"/>
+                <outlet property="RatingView" destination="62E-I4-jra" id="B7f-Qc-vVd"/>
+                <outlet property="ShortDescription" destination="tMg-eW-E7M" id="Ve3-LC-XTz"/>
             </connections>
             <point key="canvasLocation" x="248" y="289"/>
         </collectionViewCell>

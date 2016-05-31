@@ -38,17 +38,17 @@ class ProductDetailVC: UIViewController {
 
     }
     
+    override func viewWillTransitionToSize(size: CGSize, withTransitionCoordinator coordinator: UIViewControllerTransitionCoordinator) {
+        print(size)
+        
+        ProductDetailCV.collectionViewLayout.invalidateLayout()
+        
+    }
     override func viewWillAppear(animated: Bool) {
         dispatch_async(dispatch_get_main_queue()) {
             self.scrollToIndex(self.product!)
         }
     }
-//    override func viewDidAppear(animated: Bool) {
-//        dispatch_async(dispatch_get_main_queue()) {
-//            self.scrollToIndex(self.product!)
-//        }
-//    }
-
     
     func initView() {
         ProductDetailCV.registerNib(UINib(nibName: "ProductDetailCell", bundle: nil), forCellWithReuseIdentifier: "ProductDetailCell")
@@ -70,9 +70,9 @@ extension ProductDetailVC : UICollectionViewDelegateFlowLayout {
                         layout collectionViewLayout: UICollectionViewLayout,
                                sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
         
-        let frameSpace = CGRectGetWidth(ProductDetailCV!.frame)
+        let width = CGRectGetWidth(ProductDetailCV!.frame)
         let height = CGRectGetHeight(ProductDetailCV!.frame)
-        return CGSizeMake(frameSpace, height)
+        return CGSizeMake(width, height)
     }
     
 
