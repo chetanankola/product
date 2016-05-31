@@ -13,6 +13,7 @@ class ProductDetailCell: UICollectionViewCell {
     
     
     
+    @IBOutlet weak var ReviewCount: UILabel!
     @IBOutlet weak var ProductPrice: UILabel!
     @IBOutlet weak var RatingView: RatingStackView!
     @IBOutlet weak var ProductImage: UIImageView!
@@ -41,6 +42,10 @@ class ProductDetailCell: UICollectionViewCell {
         }
         if let productName = product?.productName {
                 ProductName.text = productName
+        }
+        
+        if let reviewCount = product?.reviewCount {
+            ReviewCount.text = "\(reviewCount) reviews"
         }
         
         
