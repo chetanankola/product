@@ -45,7 +45,7 @@ class ProductDetailCell: UICollectionViewCell {
         }
         
         if let reviewCount = product?.reviewCount {
-            ReviewCount.text = "\(reviewCount) reviews"
+            ReviewCount.text = "\(reviewCount) review" + (reviewCount != 1 ? "s" : "")
         }
         
         

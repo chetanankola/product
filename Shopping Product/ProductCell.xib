@@ -43,30 +43,44 @@
                                     <constraint firstAttribute="height" relation="lessThanOrEqual" constant="100" id="urF-Ns-EkH"/>
                                 </constraints>
                             </stackView>
-                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0j6-WY-ZMO" customClass="RatingStackView" customModule="Shopping_Product" customModuleProvider="target">
-                                <rect key="frame" x="8" y="245" width="100" height="33"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="33" id="Qo1-m5-eFj"/>
-                                    <constraint firstAttribute="height" constant="33" id="dIc-Vh-3Dq"/>
-                                    <constraint firstAttribute="width" constant="100" id="pTH-Bo-BHV"/>
-                                </constraints>
-                                <variation key="default">
-                                    <mask key="constraints">
-                                        <exclude reference="Qo1-m5-eFj"/>
-                                    </mask>
-                                </variation>
+                            <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="PHj-eU-GGN" userLabel="RatingReviewStack">
+                                <rect key="frame" x="8" y="248" width="144" height="33"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0j6-WY-ZMO" customClass="RatingStackView" customModule="Shopping_Product" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="100" height="33"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="33" id="Qo1-m5-eFj"/>
+                                            <constraint firstAttribute="height" constant="33" id="dIc-Vh-3Dq"/>
+                                            <constraint firstAttribute="width" constant="100" id="pTH-Bo-BHV"/>
+                                        </constraints>
+                                        <variation key="default">
+                                            <mask key="constraints">
+                                                <exclude reference="Qo1-m5-eFj"/>
+                                            </mask>
+                                        </variation>
+                                    </stackView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hE1-N8-6q0" userLabel="ReviewCount">
+                                        <rect key="frame" x="102" y="0.0" width="42" height="33"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="42" id="evW-aQ-V6X"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
                             </stackView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="abI-lL-ITT" secondAttribute="trailing" constant="8" id="Kih-r3-F7U"/>
-                            <constraint firstItem="0j6-WY-ZMO" firstAttribute="top" secondItem="abI-lL-ITT" secondAttribute="bottom" constant="5" id="KqF-Ex-UEU"/>
                             <constraint firstItem="abI-lL-ITT" firstAttribute="leading" secondItem="tcw-7W-vS7" secondAttribute="leading" constant="8" id="NMb-10-gaZ"/>
                             <constraint firstItem="cqK-QW-4C8" firstAttribute="leading" secondItem="tcw-7W-vS7" secondAttribute="leading" id="TBo-7D-z8k"/>
+                            <constraint firstItem="PHj-eU-GGN" firstAttribute="leading" secondItem="tcw-7W-vS7" secondAttribute="leading" constant="8" id="Tr0-tE-noT"/>
                             <constraint firstItem="abI-lL-ITT" firstAttribute="top" secondItem="cqK-QW-4C8" secondAttribute="bottom" id="eIK-A2-noT"/>
                             <constraint firstItem="cqK-QW-4C8" firstAttribute="top" secondItem="tcw-7W-vS7" secondAttribute="top" id="gVE-qq-5G1"/>
-                            <constraint firstItem="0j6-WY-ZMO" firstAttribute="leading" secondItem="tcw-7W-vS7" secondAttribute="leading" constant="8" id="gaq-8x-tfn"/>
                             <constraint firstAttribute="trailing" secondItem="cqK-QW-4C8" secondAttribute="trailing" id="iuE-d2-wFB"/>
+                            <constraint firstItem="PHj-eU-GGN" firstAttribute="top" secondItem="abI-lL-ITT" secondAttribute="bottom" constant="8" id="usv-DE-qk9"/>
                         </constraints>
                     </view>
                 </subviews>
@@ -85,6 +99,7 @@
                 <outlet property="ProductImage" destination="cqK-QW-4C8" id="pLI-py-cqI"/>
                 <outlet property="ProductName" destination="9qJ-wK-60k" id="2MR-57-5gn"/>
                 <outlet property="RatingView" destination="0j6-WY-ZMO" id="DLb-X6-2Kq"/>
+                <outlet property="ReviewCount" destination="hE1-N8-6q0" id="hEb-tC-rzi"/>
             </connections>
             <point key="canvasLocation" x="327.5" y="370.5"/>
         </collectionViewCell>

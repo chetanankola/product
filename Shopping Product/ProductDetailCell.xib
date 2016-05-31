@@ -31,7 +31,7 @@
                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="h9C-SD-kjC">
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="h9C-SD-kjC">
                                 <rect key="frame" x="10" y="320" width="205" height="38"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="62E-I4-jra" userLabel="Rating" customClass="RatingStackView" customModule="Shopping_Product" customModuleProvider="target">
@@ -41,7 +41,7 @@
                                             <constraint firstAttribute="width" constant="100" id="voA-8l-r7T"/>
                                         </constraints>
                                     </stackView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TdD-aF-ppv" userLabel="Review count">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TdD-aF-ppv" userLabel="Review count">
                                         <rect key="frame" x="104" y="0.0" width="101" height="38"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="101" id="tu6-bP-en7"/>
