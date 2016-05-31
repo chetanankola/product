@@ -34,8 +34,24 @@ class ProductDetailVC: UIViewController {
         super.viewDidLoad()
 
         initView()
+        initListeners()
         ProductDetailCV.reloadData()
 
+    }
+    
+    
+    func initListeners() {
+        ProductListStore.ProductListUpdated.listen(self, callback: { (productList, newProducts) in
+//            self.loadingIndicator.stopAnimating()
+            self.ProductDetailCV.performBatchUpdates({
+                var offset = productList.count - newProducts.count
+                for _ in newProducts {
+                    let indexPath = NSIndexPath(forItem: offset, inSection: 0)
+                    self.ProductDetailCV.insertItemsAtIndexPaths([indexPath])
+                    offset = offset + 1
+                }
+                }, completion: nil)
+        })
     }
     
     override func viewWillTransitionToSize(size: CGSize, withTransitionCoordinator coordinator: UIViewControllerTransitionCoordinator) {
@@ -66,6 +82,22 @@ class ProductDetailVC: UIViewController {
 
 extension ProductDetailVC : UICollectionViewDelegateFlowLayout {
     
+    
+    
+    func scrollViewDidEndDecelerating(scrollView: UIScrollView) {
+        var pageWidth = ProductDetailCV.frame.size.width
+        var currentPage = ProductDetailCV.contentOffset.x / pageWidth
+        
+        
+        
+        print(currentPage)
+        
+        if (Int(currentPage) == ProductListStore.getProductList().count - 1) {
+            print("hit the end of page")
+            ProductListStore.getNextPage()
+        }
+        
+    }
     func collectionView(collectionView: UICollectionView,
                         layout collectionViewLayout: UICollectionViewLayout,
                                sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {

@@ -33,6 +33,7 @@ class ProductDetailCell: UICollectionViewCell {
         super.prepareForReuse()
     }
     
+    
     func populateData() {
         if let productImage = product?.productImage {
             //--Product Image---//
