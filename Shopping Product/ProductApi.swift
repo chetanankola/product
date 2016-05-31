@@ -40,23 +40,6 @@ class ProductApi {
             if error != nil {
                 self.handleError(error!, completionHandler:completionHandler)
             } else {
-                
-                
-//                let dataString = NSString(data: data!, encoding: NSUTF8StringEncoding)
-//                if let dataFromString = dataString!.dataUsingEncoding(NSUTF8StringEncoding, allowLossyConversion: false) {
-//                    let json = JSON(data: dataFromString)
-//                    completionHandler(jsonData: json, success: true, errorMessage: nil)
-//                }
-
-                
-//                let encodedData = encodedString.dataUsingEncoding(NSUTF8StringEncoding)!
-//                let attributedOptions : [String: AnyObject] = [
-//                    NSDocumentTypeDocumentAttribute: NSHTMLTextDocumentType,
-//                    NSCharacterEncodingDocumentAttribute: NSUTF8StringEncoding
-//                ]
-//                print(data)
-//                let resstr = NSString(data: data!, encoding: NSUTF8StringEncoding)
-//                print(resstr)
                 let json = JSON(data: data!)
                 completionHandler(jsonData: json, success: true, errorMessage: nil)
             }

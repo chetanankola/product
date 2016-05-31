@@ -39,8 +39,7 @@ class RatingStackView: UIStackView {
         if ((rating - floor(rating)) >= AppConstants.HALF_STAR_THRESHOLD) {
             isNextStarHalf = true
         }
-        
-        
+
         //fill all stars till full stars 
         //and then fill the half, 
         //then fill with empty stars
@@ -61,16 +60,5 @@ class RatingStackView: UIStackView {
             self.addArrangedSubview(view)
         }
     }
-
-    
-    
-    
-    /*
-     // Only override drawRect: if you perform custom drawing.
-     // An empty implementation adversely affects performance during animation.
-     override func drawRect(rect: CGRect) {
-     // Drawing code
-     }
-     */
     
 }

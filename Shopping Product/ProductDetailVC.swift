@@ -42,7 +42,6 @@ class ProductDetailVC: UIViewController {
     
     func initListeners() {
         ProductListStore.ProductListUpdated.listen(self, callback: { (productList, newProducts) in
-//            self.loadingIndicator.stopAnimating()
             self.ProductDetailCV.performBatchUpdates({
                 var offset = productList.count - newProducts.count
                 for _ in newProducts {

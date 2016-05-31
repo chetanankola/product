@@ -30,15 +30,10 @@ class ProductCell: UICollectionViewCell {
     }
     
     func populateData() {
-        
-        
         if let productImage = product?.productImage {
             //--Product Image---//
             ProductImage.loadImageFromURLString(productImage, placeholderImage: AppConstants.BLUR_PLACEHOLDER_IMAGE, completion: nil)
-            
-            
         }
-        
         if let reviewCount = product?.reviewCount {
             ReviewCount.text = "(\(reviewCount))"
         }
@@ -55,29 +50,6 @@ class ProductCell: UICollectionViewCell {
         if let productName = product?.productName {
             ProductName.text = productName
         }
-
-//        if let productShortTitle = product?.shortDescription {
-//            //---Short Description//
-//            let str = productShortTitle.stringByReplacingOccurrencesOfString("<.*?>", withString: "", options: .RegularExpressionSearch, range: nil)
-//            let attrStr = try! NSAttributedString(
-//                data:  str.dataUsingEncoding(NSUnicodeStringEncoding, allowLossyConversion: true)!,
-//                options: [ NSDocumentTypeDocumentAttribute: NSHTMLTextDocumentType],
-//                documentAttributes: nil)
-//            ProductShortDescription.attributedText = attrStr
-//        }
-        
-        
-        
-        
-        
-        
-        
-        
-
-        
-        
-        
-        
     }
     override func awakeFromNib() {
         super.awakeFromNib()

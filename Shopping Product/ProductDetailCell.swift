@@ -23,9 +23,6 @@ class ProductDetailCell: UICollectionViewCell {
     @IBOutlet weak var LongDescription: UILabel!
     
     
-    
-    
-    
     var product: Product? {
         didSet {
             populateData()
@@ -83,9 +80,6 @@ class ProductDetailCell: UICollectionViewCell {
                 documentAttributes: nil)
             LongDescription.text = attrStr.string
         }
-        
-        
- 
     }
     override func awakeFromNib() {
         super.awakeFromNib()

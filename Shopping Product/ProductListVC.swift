@@ -157,39 +157,18 @@ extension ProductListVC: UIScrollViewDelegate {
     func scrollViewDidScroll(scrollView: UIScrollView) {
         let frameHeight  = scrollView.frame.size.height
         let yOffset = scrollView.contentOffset.y
-        
+
         //frameheight + YOffset = scrollerheight
-        
         let contentHeight = scrollView.contentSize.height
-        
-        
-        
         let earlyOffset = frameHeight//allows early request before the we reach end of page..
         let theYoffset = yOffset + earlyOffset
         let availScrollableHeight = max(contentHeight,frameHeight) - frameHeight
-        
-        
+
         if (theYoffset > availScrollableHeight) {
-            
-            
-//            if debounceTimer != nil {
-//                debounceTimer?.invalidate()
-//            }
-//            debounceTimer = NSTimer.scheduledTimerWithTimeInterval(0.01, target: self, selector: #selector(ProductListVC.debounceGetNextPage(_:)), userInfo: nil, repeats: false)
-//            print("trying to fetch next page")
-            
             ProductListStore.getNextPage()
             self.loadingIndicator.startAnimating()
         }
-
-        
-//        print("yoffset \(theYoffset) availHeight \(availScrollableHeight)")
-
     }
-//    func debounceGetNextPage(timer: NSTimer) {
-//        print("trying to fetch next page")
-//        ProductListStore.getNextPage()
-//    }
     
 }
 extension ProductListVC: UICollectionViewDelegate {
