@@ -13,6 +13,7 @@ class ProductDetailCell: UICollectionViewCell {
     
     
     
+    @IBOutlet weak var InStock: UILabel!
     @IBOutlet weak var ReviewCount: UILabel!
     @IBOutlet weak var ProductPrice: UILabel!
     @IBOutlet weak var RatingView: RatingStackView!
@@ -42,6 +43,10 @@ class ProductDetailCell: UICollectionViewCell {
         }
         if let productName = product?.productName {
                 ProductName.text = productName
+        }
+        
+        if let inStock = product?.inStock {
+            InStock.text = "In Stock:" + (inStock ? "Yes" : "No")
         }
         
         if let reviewCount = product?.reviewCount {

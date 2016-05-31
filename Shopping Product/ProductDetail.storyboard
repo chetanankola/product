@@ -6,10 +6,10 @@
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--ProductDetailVC-->
+        <!--Product Detail-->
         <scene sceneID="2zo-iJ-53A">
             <objects>
-                <viewController title="ProductDetailVC" id="nKR-69-h5C" customClass="ProductDetailVC" customModule="Shopping_Product" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Product Detail" id="nKR-69-h5C" customClass="ProductDetailVC" customModule="Shopping_Product" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="e0S-44-VuQ"/>
                         <viewControllerLayoutGuide type="bottom" id="ONQ-iQ-Dxx"/>

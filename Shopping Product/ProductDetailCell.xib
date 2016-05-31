@@ -46,44 +46,55 @@
                                         <constraints>
                                             <constraint firstAttribute="width" constant="101" id="tu6-bP-en7"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="15"/>
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
                             </stackView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Huk-g1-aYI" userLabel="Price">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Price" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Huk-g1-aYI" userLabel="Price">
                                 <rect key="frame" x="10" y="272" width="200" height="33"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="200" id="Wca-Bu-Hfd"/>
                                     <constraint firstAttribute="height" constant="33" id="ewr-kP-1fT"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="15"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="jSs-0y-Lmy" userLabel="DescriptionStack">
-                                <rect key="frame" x="10" y="366" width="400" height="47"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="jSs-0y-Lmy" userLabel="DescriptionStack">
+                                <rect key="frame" x="10" y="366" width="400" height="44"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" minimumScaleFactor="1" translatesAutoresizingMaskIntoConstraints="NO" id="tMg-eW-E7M" userLabel="Short Description">
-                                        <rect key="frame" x="0.0" y="0.0" width="400" height="22"/>
-                                        <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="16"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" minimumScaleFactor="1" translatesAutoresizingMaskIntoConstraints="NO" id="tMg-eW-E7M" userLabel="Short Description">
+                                        <rect key="frame" x="0.0" y="0.0" width="400" height="21"/>
+                                        <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="15"/>
                                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="8" baselineAdjustment="alignBaselines" minimumScaleFactor="1" translatesAutoresizingMaskIntoConstraints="NO" id="pBr-sv-xIF" userLabel="Long Description">
-                                        <rect key="frame" x="0.0" y="25" width="400" height="22"/>
-                                        <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="16"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="8" baselineAdjustment="alignBaselines" minimumScaleFactor="1" translatesAutoresizingMaskIntoConstraints="NO" id="pBr-sv-xIF" userLabel="Long Description">
+                                        <rect key="frame" x="0.0" y="24" width="400" height="21"/>
+                                        <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="15"/>
                                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
                             </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="InStock" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="46D-78-4Cg" userLabel="InStock">
+                                <rect key="frame" x="307" y="272" width="101" height="33"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="33" id="2Ol-nN-dVo"/>
+                                    <constraint firstAttribute="width" constant="101" id="UIl-2A-O2g"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="15"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="y8H-JQ-Zng" secondAttribute="trailing" constant="10" id="2uq-pY-uVN"/>
                             <constraint firstItem="y8H-JQ-Zng" firstAttribute="leading" secondItem="mJY-q5-zPn" secondAttribute="leading" constant="10" id="A46-Bt-aPp"/>
+                            <constraint firstAttribute="trailing" secondItem="46D-78-4Cg" secondAttribute="trailing" constant="10" id="FjR-fX-N38"/>
                             <constraint firstItem="Huk-g1-aYI" firstAttribute="top" secondItem="y8H-JQ-Zng" secondAttribute="bottom" constant="8" id="ITe-CU-zum"/>
                             <constraint firstItem="Bga-3e-ZuP" firstAttribute="leading" secondItem="mJY-q5-zPn" secondAttribute="leading" id="LZo-c3-rUG"/>
                             <constraint firstItem="h9C-SD-kjC" firstAttribute="leading" secondItem="mJY-q5-zPn" secondAttribute="leading" constant="10" id="MLK-Jh-vTL"/>
@@ -93,6 +104,7 @@
                             <constraint firstItem="h9C-SD-kjC" firstAttribute="top" secondItem="Huk-g1-aYI" secondAttribute="bottom" constant="15" id="cA0-e3-8xi"/>
                             <constraint firstItem="jSs-0y-Lmy" firstAttribute="top" secondItem="h9C-SD-kjC" secondAttribute="bottom" constant="8" id="nen-o6-uG2"/>
                             <constraint firstAttribute="trailing" secondItem="Bga-3e-ZuP" secondAttribute="trailing" id="qIN-Qv-eLU"/>
+                            <constraint firstItem="46D-78-4Cg" firstAttribute="top" secondItem="y8H-JQ-Zng" secondAttribute="bottom" constant="8" id="tCK-lQ-qqP"/>
                             <constraint firstAttribute="trailing" secondItem="jSs-0y-Lmy" secondAttribute="trailing" constant="8" id="tgx-ce-ouE"/>
                             <constraint firstItem="Huk-g1-aYI" firstAttribute="leading" secondItem="mJY-q5-zPn" secondAttribute="leading" constant="10" id="xO4-CS-bqY"/>
                         </constraints>
@@ -108,6 +120,7 @@
             </constraints>
             <size key="customSize" width="418" height="424"/>
             <connections>
+                <outlet property="InStock" destination="46D-78-4Cg" id="w4U-WA-CsI"/>
                 <outlet property="LongDescription" destination="pBr-sv-xIF" id="UCK-8u-AQz"/>
                 <outlet property="ProductImage" destination="Bga-3e-ZuP" id="bGh-jg-h24"/>
                 <outlet property="ProductName" destination="y8H-JQ-Zng" id="63w-hH-a5W"/>
