@@ -84,8 +84,8 @@ extension ProductDetailVC : UICollectionViewDelegateFlowLayout {
     
     
     func scrollViewDidEndDecelerating(scrollView: UIScrollView) {
-        var pageWidth = ProductDetailCV.frame.size.width
-        var currentPage = ProductDetailCV.contentOffset.x / pageWidth
+        let pageWidth = ProductDetailCV.frame.size.width
+        let currentPage = ProductDetailCV.contentOffset.x / pageWidth
         
         
         

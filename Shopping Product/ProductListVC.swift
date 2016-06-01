@@ -26,7 +26,7 @@ class ProductListVC: UIViewController, UIViewControllerPreviewingDelegate {
         initListeners()
         initView()
         if( traitCollection.forceTouchCapability == .Available){
-            registerForPreviewingWithDelegate(self, sourceView: view)
+            registerForPreviewingWithDelegate(self, sourceView: ProductCV)
         }
     }
     
