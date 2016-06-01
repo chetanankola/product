@@ -10,7 +10,7 @@ import UIKit
 
 class ProductDetailVC: UIViewController {
 
-    
+    var popped:Bool = false
     private let spacing:CGFloat = 0.0
     @IBOutlet weak var ProductDetailCV: UICollectionView!
     var product: Product? {
@@ -54,14 +54,18 @@ class ProductDetailVC: UIViewController {
     }
     
     override func viewWillTransitionToSize(size: CGSize, withTransitionCoordinator coordinator: UIViewControllerTransitionCoordinator) {
-        print(size)
-        
         ProductDetailCV.collectionViewLayout.invalidateLayout()
         
     }
     override func viewWillAppear(animated: Bool) {
         dispatch_async(dispatch_get_main_queue()) {
             self.scrollToIndex(self.product!)
+        }
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        if (popped) {
+            ProductDetailCV.collectionViewLayout.invalidateLayout()
         }
     }
     
@@ -87,7 +91,7 @@ extension ProductDetailVC : UICollectionViewDelegateFlowLayout {
         let pageWidth = ProductDetailCV.frame.size.width
         let currentPage = ProductDetailCV.contentOffset.x / pageWidth
         
-        
+
         
         print(currentPage)
         

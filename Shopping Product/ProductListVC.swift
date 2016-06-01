@@ -68,11 +68,14 @@ class ProductListVC: UIViewController, UIViewControllerPreviewingDelegate {
         
         productDetailVC.product = ProductListStore.getProductList()[indexPath!.row]
         
-        
+        //bug, this needs to be done so that the final view updates and invalidates layout!! :(
+        productDetailVC.popped = true
+
         let frameSpace = CGRectGetWidth(ProductCV.frame)
         let height = CGRectGetHeight(ProductCV.frame)
-        productDetailVC.preferredContentSize = CGSize(width: frameSpace, height: height)
-        previewingContext.sourceRect = cell!.frame
+        
+//        productDetailVC.preferredContentSize = CGSize(width: frameSpace, height: height)
+//        previewingContext.sourceRect = cell!.frame
         
         return productDetailVC
 
